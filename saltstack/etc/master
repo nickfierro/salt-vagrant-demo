@@ -136,7 +136,7 @@
 # the key rotation event as minions reconnect. Consider this carefully if this
 # salt master is managing a large number of minions.
 #
-# If disabled, it is recommended to handle this event by listening for the 
+# If disabled, it is recommended to handle this event by listening for the
 # 'aes_key_rotate' event with the 'key' tag and acting appropriately.
 # ping_on_rotate: False
 
@@ -352,7 +352,7 @@
 # the master server. The default is md5, but sha1, sha224, sha256, sha384
 # and sha512 are also supported.
 #
-# Prior to changing this value, the master should be stopped and all Salt 
+# Prior to changing this value, the master should be stopped and all Salt
 # caches should be cleared.
 #hash_type: md5
 
@@ -390,9 +390,9 @@
 #  - roots
 #
 # To use multiple backends list them in the order they are searched:
-#fileserver_backend:
-#  - git
-#  - roots
+fileserver_backend:
+  - git
+  - roots
 #
 # Uncomment the line below if you do not want the file_server to follow
 # symlinks when walking the filesystem tree. This is set to True
@@ -422,7 +422,7 @@
 #
 # Gitfs can be provided by one of two python modules: GitPython or pygit2. If
 # using pygit2, both libgit2 and git must also be installed.
-#gitfs_provider: gitpython
+gitfs_provider: gitpython
 #
 # When using the git fileserver backend at least one git remote needs to be
 # defined. The user running the salt master will need read access to the repo.
@@ -433,9 +433,9 @@
 # environments.
 # Note:  file:// repos will be treated as a remote, so refs you want used must
 # exist in that repo as *local* refs.
-#gitfs_remotes:
-#  - git://github.com/saltstack/salt-states.git
-#  - file:///var/git/saltmaster
+gitfs_remotes:
+  - https://github.com/nickfierro/docker-formula.git
+  - https://github.com/nickfierro/os-hardening-formula.git
 #
 # The gitfs_ssl_verify option specifies whether to ignore ssl certificate
 # errors when contacting the gitfs backend. You might want to set this to
